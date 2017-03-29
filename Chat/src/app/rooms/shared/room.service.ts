@@ -1,15 +1,16 @@
-import { Injectable }     from '@angular/core';
-import { Http, Response} from '@angular/http';
+import { Injectable } from '@angular/core';
+import { Http, Response } from '@angular/http';
 import { Room } from './room.model';
-import {Observable} from 'rxjs/Rx';
+import { Observable } from 'rxjs/Rx';
 
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
 
 @Injectable()
 export class RoomService {
-  constructor (private http: Http) {}
   private roomsUrl = 'app/rooms/shared/room-list.json';
+
+  constructor (private http: Http) {}
 
   getRooms() : Observable<Room[]> {
     return this.http.get(this.roomsUrl)
@@ -21,5 +22,6 @@ export class RoomService {
     return this.getRooms()
       .map(rooms => rooms.find(room => room.id === id));
   }
+
 }
 
