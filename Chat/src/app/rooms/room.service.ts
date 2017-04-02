@@ -8,7 +8,7 @@ import 'rxjs/add/operator/catch';
 
 @Injectable()
 export class RoomService {
-  private roomsUrl = 'app/rooms/shared/room-list.json';
+  private roomsUrl = 'app/rooms/room-list.json';
 
   constructor (private http: Http) {}
 

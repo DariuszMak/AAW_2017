@@ -18,14 +18,14 @@
   height: 1.6em;
   border-radius: 4px;
 }
-.rooms li.selected:hover {
-  background-color: #BBD8DC;
-  color: white;
-}
 .rooms li:hover {
   color: #607D8B;
   background-color: #DDD;
   left: .1em;
+}
+.rooms li.selected:hover {
+  background-color: #BBD8DC;
+  color: white;
 }
 .rooms .text {
   position: relative;

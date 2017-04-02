@@ -1,8 +1,8 @@
-import { Room } from '../rooms/shared/room.model';
+import { Room } from '../rooms/room.model';
 
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { RoomService } from '../rooms/shared/room.service';
+import { RoomService } from '../rooms/room.service';
 
 import { Subscription } from "rxjs";
 

@@ -9,7 +9,7 @@ import { RoomDetailComponent } from './room-detail/room-detail.component';
 import { PageNotFoundComponent } from "./page-not-found/page-not-found.component";
 
 import { AppRoutingModule } from './app-routing.module';
-import { RoomService } from "./rooms/shared/room.service";
+import { RoomService } from "./rooms/room.service";
 
 @NgModule({
   imports: [
