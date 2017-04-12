@@ -12,7 +12,7 @@ export class RoomService {
 
   constructor (private http: Http) {}
 
-  getRooms() : Observable<Room[]> {
+  getRooms(): Observable<Room[]> {
     return this.http.get(this.roomsUrl)
       .map((res:Response) => res.json())
       .catch((error:any) => Observable.throw(error.json().error || 'Server error'));
@@ -24,4 +24,5 @@ export class RoomService {
   }
 
 }
+
 
