@@ -27,7 +27,7 @@ export class RoomDetailComponent implements OnInit, OnDestroy {
     });
   }
 
-  ngOnDestroy() : void {
+  ngOnDestroy(): void {
     this.subscribe.unsubscribe();
   }
 
