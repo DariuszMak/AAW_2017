@@ -10,6 +10,8 @@ import { PageNotFoundComponent } from "./page-not-found/page-not-found.component
 
 import { AppRoutingModule } from './app-routing.module';
 import { RoomService } from "./rooms/room.service";
+import { NotificationService } from "./notifications/notification.service";
+import { NotificationComponent } from "./notification/notification.component";
 
 @NgModule({
   imports: [
@@ -23,14 +25,17 @@ import { RoomService } from "./rooms/room.service";
     AppComponent,
     RoomListComponent,
     RoomDetailComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    NotificationComponent
   ],
   bootstrap: [
     AppComponent
   ],
   providers: [
-    RoomService
+    RoomService,
+    NotificationService
   ]
 })
 
 export class AppModule { }
+

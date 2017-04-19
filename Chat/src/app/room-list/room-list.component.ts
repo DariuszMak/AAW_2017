@@ -5,6 +5,9 @@ import { Room } from '../rooms/room.model';
 import { RoomService } from '../rooms/room.service';
 import { Subscription } from "rxjs";
 
+import { NotificationService } from '../notifications/notification.service';
+import { Notification } from '../notifications/notification.model';
+
 @Component({
   selector: 'my-list-room',
   templateUrl: './room-list.component.html',
@@ -19,6 +22,7 @@ export class RoomListComponent implements OnInit, OnDestroy {
 
   constructor(
     private roomService: RoomService,
+    private notificationService: NotificationService,
     private router: Router,) {}
 
   getRooms() {
@@ -26,7 +30,8 @@ export class RoomListComponent implements OnInit, OnDestroy {
       .subscribe(
         rooms => this.rooms = rooms,
         error => {
-          this.errorMessage = "Błąd przy pobieraniu: " + error;
+          this.errorMessage = "Błąd przy pobieraniu listy pokoi: " + error;
+          this.notificationService.add(new Notification('error', this.errorMessage));
         });
   }
 
