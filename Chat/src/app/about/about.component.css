@@ -1,0 +1,12 @@
+.about {
+  margin: 0 0 2em 0;
+  list-style-type: none;
+  padding: 0;
+  width: 15em;
+}
+.text {
+  position: relative;
+  top: -3px;
+  color: rgba(0, 4, 75, 0.79);
+  padding: 12px;
+}
