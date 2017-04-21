@@ -6,7 +6,7 @@ import { RoomService } from '../rooms/room.service';
 import { Subscription } from "rxjs";
 
 import { NotificationService } from '../notifications/notification.service';
-import { Notification } from '../notifications/notification.model';
+import { Notification, TypeEnum } from '../notifications/notification.model';
 
 @Component({
   selector: 'my-list-room',
@@ -31,7 +31,7 @@ export class RoomListComponent implements OnInit, OnDestroy {
         rooms => this.rooms = rooms,
         error => {
           this.errorMessage = "Błąd przy pobieraniu listy pokoi: " + error;
-          this.notificationService.add(new Notification('error', this.errorMessage));
+          this.notificationService.add(<Notification> {type: TypeEnum.error, message: this.errorMessage});
         });
   }
 

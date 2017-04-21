@@ -1,7 +1,13 @@
-export class Notification {
+export enum TypeEnum {
+  error = <any>"error",
+  success = <any>"success",
+  warn = <any>"warn",
+  info = <any>"info"
+}
 
-  constructor(public type: string = '',
-              public message: string = '') {
-  }
+export interface Notification {
+
+  type: TypeEnum;
+  message: string;
 
 }
