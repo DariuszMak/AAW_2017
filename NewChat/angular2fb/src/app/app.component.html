@@ -1,5 +1,16 @@
+<my-notification></my-notification>
+<div class="logo">{{name}}</div>
 <ul>
   <li class="text" *ngFor="let item of items | async">
     {{item.$value}}
   </li>
 </ul>
+<nav>
+  <a routerLink="/room-list" routerLinkActive="active">Pokaż pokoje</a>
+  <a routerLink="/about">About</a>
+</nav>
+
+<div id="content">
+  <router-outlet></router-outlet>
+</div>
+

@@ -1,6 +1,3 @@
-/**
- * Created by roxwo on 27.04.2017.
- */
 export const firebaseConfig = {
   apiKey: 'AIzaSyCN8mzKVqg_TmR_VZte23dC-aptbXL1KOM',
   authDomain: 'webowe-e83e6.firebaseapp.com',

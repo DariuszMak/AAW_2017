@@ -7,6 +7,7 @@ import { AngularFire, FirebaseListObservable } from 'angularfire2';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  private name: string = 'Chat internetowy';
   items: FirebaseListObservable<any[]>;
   constructor(af: AngularFire) {
     this.items = af.database.list('/items');
