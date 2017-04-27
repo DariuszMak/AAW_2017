@@ -1,12 +1,19 @@
-<div id="content">
-  <div class="bigtitle">
+<div class="bigtitle">
     Lista pokoi
-  </div>
-  <ul class="rooms">
-    <li *ngFor="let room of rooms"
-        [class.selected]="room === selectedRoom"
-        (click)="onSelect(room)">
-      <span class="badge">{{room.id}}</span> {{room.name}}
-    </li>
-  </ul>
 </div>
+
+
+<div id="sidebar">
+  <div class="optionL">
+    <ul class="rooms">
+      <li *ngFor="let room of rooms"
+          [class.selected]="room === selectedRoom"
+          (click)="onSelect(room)">
+        <span class="badge">{{room.id}}</span> {{room.name}}
+      </li>
+    </ul>
+  </div>
+
+</div>
+
+
