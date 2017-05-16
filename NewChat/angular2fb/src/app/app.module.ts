@@ -5,6 +5,7 @@ import {HttpModule, JsonpModule} from '@angular/http';
 import { AngularFireModule } from 'angularfire2';
 
 import { AppComponent } from './app.component';
+import { NewRoomComponent } from './new-room/new-room.component';
 import { firebaseConfig } from "../environments/firebase.config";
 import { RoomListComponent } from "./room-list/room-list.component";
 import { NotificationComponent } from "./notification/notification.component";
@@ -17,6 +18,7 @@ import { NotificationService } from "./notifications/notification.service";
 @NgModule({
   declarations: [
     AppComponent,
+    NewRoomComponent,
     RoomListComponent,
     RoomDetailComponent,
     PageNotFoundComponent,
