@@ -11,6 +11,6 @@ export class NewRoomComponent {
 
   model: any = {};
   create(){
-    console.log("utworzono");
+    console.log('utworzono');
   }
 }
