@@ -3,7 +3,7 @@ import { Router } from '@angular/router';
 
 import { Room } from '../rooms/room.model';
 import { RoomService } from '../rooms/room.service';
-import { Subscription } from "rxjs";
+import { Subscription } from 'rxjs';
 
 import { NotificationService } from '../notifications/notification.service';
 import { Notification, TypeEnum } from '../notifications/notification.model';
@@ -23,14 +23,15 @@ export class RoomListComponent implements OnInit, OnDestroy {
   constructor(
     private roomService: RoomService,
     private notificationService: NotificationService,
-    private router: Router,) {}
+    private router: Router
+  ) {}
 
   getRooms() {
     this.subscribe = this.roomService.getRooms()
       .subscribe(
         rooms => this.rooms = rooms,
         error => {
-          this.errorMessage = "Błąd przy pobieraniu listy pokoi: " + error;
+          this.errorMessage = 'Błąd przy pobieraniu listy pokoi: ' + error;
           this.notificationService.add(<Notification> {type: TypeEnum.error, message: this.errorMessage});
         });
   }
@@ -39,7 +40,7 @@ export class RoomListComponent implements OnInit, OnDestroy {
     this.getRooms();
   }
 
-  ngOnDestroy() : void {
+  ngOnDestroy(): void {
     this.subscribe.unsubscribe();
   }
 

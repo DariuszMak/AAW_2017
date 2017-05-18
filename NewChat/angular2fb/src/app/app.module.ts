@@ -6,14 +6,14 @@ import { AngularFireModule } from 'angularfire2';
 
 import { AppComponent } from './app.component';
 import { NewRoomComponent } from './new-room/new-room.component';
-import { firebaseConfig } from "../environments/firebase.config";
-import { RoomListComponent } from "./room-list/room-list.component";
-import { NotificationComponent } from "./notification/notification.component";
-import { RoomDetailComponent } from "./room-detail/room-detail.component";
-import { PageNotFoundComponent } from "./page-not-found/page-not-found.component";
-import { AppRoutingModule } from "./app-routing.module";
-import { RoomService } from "./rooms/room.service";
-import { NotificationService } from "./notifications/notification.service";
+import { firebaseConfig } from '../environments/firebase.config';
+import { RoomListComponent } from './room-list/room-list.component';
+import { NotificationComponent } from './notification/notification.component';
+import { RoomDetailComponent } from './room-detail/room-detail.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { AppRoutingModule } from './app-routing.module';
+import { RoomService } from './rooms/room.service';
+import { NotificationService } from './notifications/notification.service';
 
 @NgModule({
   declarations: [
