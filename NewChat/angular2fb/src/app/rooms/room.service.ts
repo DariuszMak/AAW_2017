@@ -1,26 +1,45 @@
 import { Injectable } from '@angular/core';
-import { Http, Response } from '@angular/http';
 import { Room } from './room.model';
 import { Observable } from 'rxjs/Rx';
 
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
+import { AngularFire, FirebaseListObservable } from "angularfire2";
 
 @Injectable()
 export class RoomService {
-  private roomsUrl = 'app/rooms/room-list.json';
 
-  constructor (private http: Http) {}
+  constructor (private af: AngularFire) {}
 
-  getRooms(): Observable<Room[]> {
-    return this.http.get(this.roomsUrl)
-      .map((res:Response) => res.json())
-      .catch((error:any) => Observable.throw(error.json().error || 'Server error'));
+  getRooms(): FirebaseListObservable<Room[]> {
+    return this.af.database.list('rooms');
   }
 
   getRoom(id: number): Observable<Room> {
     return this.getRooms()
       .map(rooms => rooms.find(room => room.id === id));
+  }
+
+  addRoom(room: Room){
+    this.af.database.list('rooms').push(room);
+  }
+
+  deleteRoom(id: number){
+    const roomList = this.af.database.list('rooms', {
+      preserveSnapshot: true,
+      query:{
+        orderByChild:'id',
+        equalTo:id,
+        limitToFirst:1
+      }
+    });
+
+    roomList.subscribe(snapshots=>{
+      snapshots.forEach(snapshot => {
+        snapshot.ref.remove();
+      });
+    })
+
   }
 
 }

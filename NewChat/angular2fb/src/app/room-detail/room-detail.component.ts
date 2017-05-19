@@ -5,6 +5,8 @@ import { ActivatedRoute } from '@angular/router';
 import { RoomService } from '../rooms/room.service';
 
 import { Subscription } from "rxjs";
+import { NotificationService } from "../notifications/notification.service";
+import { Notification, TypeEnum } from "../notifications/notification.model";
 
 @Component({
   selector: 'my-room-detail',
@@ -18,7 +20,8 @@ export class RoomDetailComponent implements OnInit, OnDestroy {
 
   constructor(
     private roomService: RoomService,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private notificationService: NotificationService
   ) {}
 
   ngOnInit() {
@@ -29,6 +32,11 @@ export class RoomDetailComponent implements OnInit, OnDestroy {
 
   ngOnDestroy(): void {
     this.subscribe.unsubscribe();
+  }
+
+  deleteRoom(): void {
+    this.roomService.deleteRoom(this.room.id);
+    this.notificationService.add(<Notification> {type: TypeEnum.success, message: "Usunięto pokój"});
   }
 
 }
