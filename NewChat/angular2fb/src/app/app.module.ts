@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import {HttpModule, JsonpModule} from '@angular/http';
+import { HttpModule, JsonpModule } from '@angular/http';
 import { AngularFireModule } from 'angularfire2';
 
 import { AppComponent } from './app.component';
@@ -14,6 +14,8 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { AppRoutingModule } from './app-routing.module';
 import { RoomService } from './rooms/room.service';
 import { NotificationService } from './notifications/notification.service';
+import { ConversationComponent } from './conversation/conversation.component';
+import { QuillEditorModule } from 'ng2-quill-editor';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,8 @@ import { NotificationService } from './notifications/notification.service';
     RoomListComponent,
     RoomDetailComponent,
     PageNotFoundComponent,
-    NotificationComponent
+    NotificationComponent,
+    ConversationComponent
   ],
   imports: [
     BrowserModule,
@@ -30,7 +33,8 @@ import { NotificationService } from './notifications/notification.service';
     FormsModule,
     HttpModule,
     JsonpModule,
-    AppRoutingModule
+    AppRoutingModule,
+    QuillEditorModule
   ],
   providers: [
     RoomService,

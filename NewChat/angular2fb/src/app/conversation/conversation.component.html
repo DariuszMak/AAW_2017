@@ -1,0 +1,9 @@
+<li *ngFor="let message of messages">
+  <div [innerHTML] = message.name></div>
+  {{message.date | date:'medium'}}
+  <p></p>
+  {{message.sender}}
+</li>
+<quill-editor [(ngModel)]="editorContent"
+              [options]="editorOptions"></quill-editor>
+<button type="button" class="btn btn-default" (click)="sendMessage()">Wyślij wiadomość</button>
