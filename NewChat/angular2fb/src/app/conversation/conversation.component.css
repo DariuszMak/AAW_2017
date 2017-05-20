@@ -1,0 +1,24 @@
+.messages {
+  margin: 0 0 2em 0;
+  list-style-type: none;
+  padding: 0;
+  width: 45em;
+  height: 25em;
+  overflow: auto;
+}
+.messages li {
+  position: relative;
+  left: 0;
+  background-color: #b3adb1;
+  margin: .5em;
+  padding: .3em 0;
+  height: auto;
+  overflow: auto;
+  border-radius: 4px;
+}
+.messages .date {
+  color: #841aff;
+}
+.messages .sender {
+  color: #fef7fc;
+}

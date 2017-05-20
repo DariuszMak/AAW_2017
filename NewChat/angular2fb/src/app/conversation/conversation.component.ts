@@ -3,7 +3,8 @@ import { Message } from "../messages/message.model";
 
 @Component({
   selector: 'my-conversation',
-  templateUrl: './conversation.component.html'
+  templateUrl: './conversation.component.html',
+  styleUrls:  ['./conversation.component.css']
 })
 
 export class ConversationComponent {
@@ -20,8 +21,8 @@ export class ConversationComponent {
   }
 
   sendMessage(): void {
-    this.messages.push({name:this.editorContent, date:new Date(), sender:"Wysyłający"});
-    this.editorContent = '<h3>"Wpisz tekst..."</h3>';
+    this.messages.push({name:this.editorContent, date:new Date(), sender:"Użytkownik"});
+    this.editorContent = '';
   }
 
 }

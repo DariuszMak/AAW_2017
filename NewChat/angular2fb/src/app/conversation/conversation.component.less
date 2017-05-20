@@ -1,0 +1,28 @@
+@color_1: #841aff;
+@color_2: rgb(254, 247, 252);
+@background_color_1: #b3adb1;
+
+.messages {
+  margin: 0 0 2em 0;
+  list-style-type: none;
+  padding: 0;
+  width: 45em;
+  height: 25em;
+  overflow: auto;
+  li {
+    position: relative;
+    left: 0;
+    background-color: @background_color_1;
+    margin: .5em;
+    padding: .3em 0;
+    height: auto;
+    overflow: auto;
+    border-radius: 4px;
+  }
+  .date{
+    color: @color_1;
+  }
+  .sender{
+    color: @color_2;
+  }
+}
