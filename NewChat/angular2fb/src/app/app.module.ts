@@ -16,6 +16,8 @@ import { RoomService } from './rooms/room.service';
 import { NotificationService } from './notifications/notification.service';
 import { ConversationComponent } from './conversation/conversation.component';
 import { QuillEditorModule } from 'ng2-quill-editor';
+import {AuthenticationComponent} from "./authentication/authentication.component";
+import {AuthenticationService} from "./authentication/authentication.service";
 
 @NgModule({
   declarations: [
@@ -25,7 +27,8 @@ import { QuillEditorModule } from 'ng2-quill-editor';
     RoomDetailComponent,
     PageNotFoundComponent,
     NotificationComponent,
-    ConversationComponent
+    ConversationComponent,
+    AuthenticationComponent
   ],
   imports: [
     BrowserModule,
@@ -38,7 +41,8 @@ import { QuillEditorModule } from 'ng2-quill-editor';
   ],
   providers: [
     RoomService,
-    NotificationService
+    NotificationService,
+    AuthenticationService
   ],
   bootstrap: [
     AppComponent

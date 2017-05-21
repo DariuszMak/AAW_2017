@@ -6,6 +6,7 @@ import { RoomDetailComponent } from './room-detail/room-detail.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { NewRoomComponent } from './new-room/new-room.component';
 import { AuthGuard } from './_guards/auth.guard';
+import { AuthenticationComponent } from './authentication/authentication.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'room-list', pathMatch: 'full' },
@@ -13,7 +14,8 @@ const routes: Routes = [
   { path: 'room-list/:id', component: RoomDetailComponent, canActivate : [AuthGuard, 'singleRoomGuard']},
   { path: 'about', loadChildren: 'app/about/about.module#LazyModule' },
   { path: 'new-room', component: NewRoomComponent },
-  { path: '**', component: PageNotFoundComponent },
+  { path: 'login', component : AuthenticationComponent },
+  { path: '**', component: PageNotFoundComponent }
 ];
 
 export const routingProviders = [
