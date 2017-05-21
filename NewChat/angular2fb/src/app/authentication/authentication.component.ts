@@ -25,6 +25,15 @@ export class AuthenticationComponent implements OnInit{
     this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/';
   }
 
+  login()
+  {
+    this.loading = true;
+    console.log('Sending username: ' + this.model.username);
+    this.loading = this.authenticationService.login(this.model.username);
+
+    if(!this.loading) this.router.navigate([this.returnUrl]);
+  }
+
 
 
 }

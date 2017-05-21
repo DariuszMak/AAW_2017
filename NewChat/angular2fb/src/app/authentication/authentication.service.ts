@@ -5,8 +5,11 @@ export class AuthenticationService{
 
   login(username: string) {
     localStorage.setItem('currentUser', username);
-    console.log('Service username added to local storage: ' + username);
-
+    if(username){
+      console.log('Service username added to local storage: ' + username);
+      return true;
+    }
+    return false;
   }
 
   logout(){
