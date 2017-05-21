@@ -4,12 +4,13 @@ import {ActivatedRouteSnapshot, RouterModule, RouterStateSnapshot, Routes} from 
 import { RoomListComponent } from './room-list/room-list.component';
 import { RoomDetailComponent } from './room-detail/room-detail.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
-import {NewRoomComponent} from './new-room/new-room.component';
+import { NewRoomComponent } from './new-room/new-room.component';
+import { AuthGuard } from './_guards/auth.guard';
 
 const routes: Routes = [
   { path: '', redirectTo: 'room-list', pathMatch: 'full' },
   { path: 'room-list', component: RoomListComponent },
-  { path: 'room-list/:id', component: RoomDetailComponent, canActivate : ['singleRoomGuard']},
+  { path: 'room-list/:id', component: RoomDetailComponent, canActivate : [AuthGuard, 'singleRoomGuard']},
   { path: 'about', loadChildren: 'app/about/about.module#LazyModule' },
   { path: 'new-room', component: NewRoomComponent },
   { path: '**', component: PageNotFoundComponent },
@@ -26,7 +27,7 @@ export function singleRoomGuard(route: ActivatedRouteSnapshot, state: RouterStat
 @NgModule({
   imports: [ RouterModule.forRoot(routes) ],
   exports: [ RouterModule ],
-  providers: [ routingProviders ]
+  providers: [ routingProviders, AuthGuard ]
 })
 
 export class AppRoutingModule {}
