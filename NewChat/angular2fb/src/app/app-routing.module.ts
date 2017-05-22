@@ -10,10 +10,10 @@ import { AuthenticationComponent } from './authentication/authentication.compone
 
 const routes: Routes = [
   { path: '', redirectTo: 'room-list', pathMatch: 'full' },
-  { path: 'room-list', component: RoomListComponent },
+  { path: 'room-list', component: RoomListComponent, canActivate : [AuthGuard] },
   { path: 'room-list/:id', component: RoomDetailComponent, canActivate : [AuthGuard, 'singleRoomGuard']},
   { path: 'about', loadChildren: 'app/about/about.module#LazyModule' },
-  { path: 'new-room', component: NewRoomComponent },
+  { path: 'new-room', component: NewRoomComponent, canActivate : [AuthGuard] },
   { path: 'login', component : AuthenticationComponent },
   { path: '**', component: PageNotFoundComponent }
 ];
