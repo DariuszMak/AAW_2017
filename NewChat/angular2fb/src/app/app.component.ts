@@ -8,8 +8,11 @@ import { AngularFire, FirebaseListObservable } from 'angularfire2';
 })
 export class AppComponent {
   private name: string = 'Chat internetowy';
+
+  currentUser: string;
   items: FirebaseListObservable<any[]>;
   constructor(af: AngularFire) {
     this.items = af.database.list('/items');
+    this.currentUser = localStorage.getItem('currentUser');
   }
 }
