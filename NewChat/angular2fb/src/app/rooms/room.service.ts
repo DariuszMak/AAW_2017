@@ -21,7 +21,8 @@ export class RoomService {
   }
 
   addRoom(room: Room){
-    return this.af.database.list('rooms').push(({id: room.id, name: room.name})).then(
+    const id_number = Number(room.id);
+    return this.af.database.list('rooms').push(({id: id_number, name: room.name})).then(
       () => console.log('item added'),
       console.error
     );
