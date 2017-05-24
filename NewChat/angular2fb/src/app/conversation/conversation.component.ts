@@ -1,5 +1,5 @@
-import { Component } from "@angular/core";
-import { Message } from "../messages/message.model";
+import { Component } from '@angular/core';
+import { Message } from '../messages/message.model';
 
 @Component({
   selector: 'my-conversation',
@@ -13,7 +13,7 @@ export class ConversationComponent {
 
   public editorContent;
   public editorOptions = {
-    placeholder: "Wpisz tekst..."
+    placeholder: 'Wpisz tekst...'
   };
 
   constructor() {
@@ -21,7 +21,7 @@ export class ConversationComponent {
   }
 
   sendMessage(): void {
-    this.messages.push({name:this.editorContent, date:new Date(), sender:localStorage.getItem('currentUser')});
+    this.messages.push({name:this.editorContent, date:new Date(), sender: localStorage.getItem('currentUser')});
     this.editorContent = '';
   }
 

@@ -32,13 +32,13 @@ export class RoomService {
     const roomList = this.af.database.list('rooms', {
       preserveSnapshot: true,
       query:{
-        orderByChild:'id',
-        equalTo:id,
+        orderByChild: 'id',
+        equalTo: id,
         limitToFirst:1
       }
     });
 
-    roomList.subscribe(snapshots=>{
+    roomList.subscribe(snapshots => {
       snapshots.forEach(snapshot => {
         snapshot.ref.remove();
       });
