@@ -2,6 +2,8 @@ import {Component, OnDestroy, OnInit} from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
 import {AuthenticationService} from './authentication.service';
 import {getBootstrapListener} from "@angular/router/src/router_module";
+import {NotificationService} from "../notifications/notification.service";
+import {TypeEnum, Notification} from "../notifications/notification.model";
 @Component({
   moduleId: module.id,
   selector: 'my-authentication',
@@ -17,7 +19,8 @@ export class AuthenticationComponent implements OnInit, OnDestroy{
   constructor(
     private route: ActivatedRoute,
     private router: Router,
-    private authenticationService: AuthenticationService
+    private authenticationService: AuthenticationService,
+    private notificationService: NotificationService
   ){}
 
   ngOnInit()
@@ -37,6 +40,8 @@ export class AuthenticationComponent implements OnInit, OnDestroy{
     getBootstrapListener
     this.loading = this.authenticationService.login(this.model.username);
     this.loading = !this.loading;
+
+    this.notificationService.add(<Notification> {type: TypeEnum.success, message: 'Witaj, ' + this.model.username});
 
     if (!this.loading)
     {
