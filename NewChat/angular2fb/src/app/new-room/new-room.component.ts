@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import { RoomService } from '../rooms/room.service';
+import { NotificationService } from "../notifications/notification.service";
+import { Notification, TypeEnum } from "../notifications/notification.model";
 
 @Component({
   moduleId: module.id,
@@ -8,8 +11,14 @@ import { Component } from '@angular/core';
 
 export class NewRoomComponent {
 
+  constructor(
+    private roomService: RoomService,
+    private notificationService: NotificationService
+  ) {}
+
   model: any = {};
+
   create(){
-    console.log('utworzono');
+    this.roomService.addRoom(this.model);
   }
 }

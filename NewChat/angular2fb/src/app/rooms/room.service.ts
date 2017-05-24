@@ -21,7 +21,10 @@ export class RoomService {
   }
 
   addRoom(room: Room){
-    this.af.database.list('rooms').push(room);
+    return this.af.database.list('rooms').push(({id: room.id, name: room.name})).then(
+      () => console.log('item added'),
+      console.error
+    );
   }
 
   deleteRoom(id: number){
