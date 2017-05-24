@@ -21,7 +21,7 @@ export class ConversationComponent {
   }
 
   sendMessage(): void {
-    this.messages.push({name:this.editorContent, date:new Date(), sender:"Użytkownik"});
+    this.messages.push({name:this.editorContent, date:new Date(), sender:localStorage.getItem('currentUser')});
     this.editorContent = '';
   }
 
