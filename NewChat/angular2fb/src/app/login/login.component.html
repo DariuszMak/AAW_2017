@@ -1,22 +1,21 @@
-<head>
-  <link rel="stylesheet" type="text/css" href="login.component.css">
+<head xmlns="http://www.w3.org/1999/html">
   <link href='https://fonts.googleapis.com/css?family=Amatic SC' rel='stylesheet'>
 </head>
 
-<form>
+<form name="form" (ngSubmit)="f.form.valid && login()" #f="ngForm" novalidate>
   <div class="container">
     <label><b>Email</b></label>
-    <input type="email" placeholder="Enter email" name="email" required>
+    <input type="email" placeholder="Enter email" [(ngModel)]="model.email" #email="ngModel" name="email" required>
 
     <label><b>Password</b></label>
-    <input type="password" placeholder="Enter password" name="password" required>
+    <input type="password" placeholder="Enter password" [(ngModel)]="model.password" #password="ngModel" name="password" required>
 
-    <button type="submit" style="font-family: 'Amatic SC';font-size: 20px">Login</button>
+    <button type="submit">Login</button>
     <input type="checkbox"> Remember me
   </div>
 
   <div class="container" style="background-color:#f1f1f1">
-    <button type="button" style="font-family: 'Amatic SC';font-size: 20px" class="cancelbtn">Cancel</button>
+    <button type="button" class="cancelbtn">Cancel</button>
     <span class="psw">Forgot <a href="#">password?</a></span>
   </div>
 </form>
