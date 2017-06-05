@@ -1,34 +1,23 @@
-/**
- * Created by Dawid on 2017-05-30.
- */
-import { Component } from '@angular/core';
-import { AngularFire, AuthProviders, AuthMethods } from 'angularfire2';
+import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { AuthService } from '../providers/auth.service';
+
 
 @Component({
-  moduleId: module.id,
-  selector: 'app-root',
+  selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls:  ['login.component.less']
+  styleUrls: ['./login.component.css']
 })
-export class LoginComponent {
+export class LoginComponent implements OnInit {
 
+  constructor(public authService: AuthService, private router: Router) { }
 
-  constructor(public af: AngularFire) {
-    this.af.auth.subscribe(auth => {
-      if(auth) {
-        console.log('You are authenticated', auth)
-      } else {
-        console.log('You are not authenticated')
-      }
-    });  }
-  model: any = {};
+  ngOnInit() {
+  }
 
-
-  login() {
-    console.log('Logging...');
-    this.af.auth.login({
-      email: this.model.email,
-      password: this.model.password
-    });
+  login(){
+    this.authService.loginWithGoogle().then((data)=>{
+      this.router.navigate(['room-list']);
+    })
   }
 }

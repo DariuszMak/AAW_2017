@@ -6,7 +6,6 @@ import { RoomDetailComponent } from './room-detail/room-detail.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { NewRoomComponent } from './new-room/new-room.component';
 import { AuthGuard } from './_guards/auth.guard';
-//import { AuthenticationComponent } from './authentication/authentication.component';
 import { LoginComponent } from './login/login.component';
 
 const routes: Routes = [
