@@ -1,9 +1,18 @@
 <div class="jumbotron">
   <div class="container">
     <div class="col-sm-8 col-sm-offset-2">
+      <div *ngIf="isLoggedIn">
+        <p class="navbar-text navbar-right">Logged In: {{currentUser_name}} ({{currentUser_email}})
+
+        <button class="btn btn-default" (click)="logout()">Logout</button> </p>
+      </div>
+      <div *ngIf="!isLoggedIn">
+        <p class="navbar-text navbar-right">Logget Out!</p>
+      </div>
      <!-- <p><a [routerLink]="['/login']">Logout</a></p> -->
 <my-notification></my-notification>
 <div class="logo">{{name}}</div>
+
 <ul>
   <li class="text" *ngFor="let item of items | async">
     {{item.$value}}

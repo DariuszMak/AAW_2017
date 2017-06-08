@@ -49,4 +49,5 @@ export class RoomListComponent implements OnInit, OnDestroy {
     this.router.navigate(['/room-list', this.selectedRoom.id]);
   }
 
+
 }
