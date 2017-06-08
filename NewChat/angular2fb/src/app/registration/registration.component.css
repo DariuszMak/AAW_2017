@@ -26,13 +26,14 @@ button {
 }
 
 /* Float cancel and signup buttons and add an equal width */
-.cancelbtn,.signupbtn {
+.cancelbtn, .signupbtn {
   float: left;
   width: 50%;
 }
 
 body {
-  font-family: 'Amatic SC';font-size: 25px;
+  font-family: 'Amatic SC';
+  font-size: 25px;
 }
 
 /* Add padding to container elements */

@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
-import { AuthService } from '../providers/auth.service';
+import {Component, OnInit} from '@angular/core';
+import {Router} from '@angular/router';
+import {AuthService} from '../providers/auth.service';
 
 
 @Component({
@@ -10,14 +10,15 @@ import { AuthService } from '../providers/auth.service';
 })
 export class LoginComponent implements OnInit {
 
-  constructor(public authService: AuthService, private router: Router) { }
+  constructor(public authService: AuthService, private router: Router) {
+  }
 
   ngOnInit() {
   }
 
-  login(){
-    this.authService.loginWithGoogle().then((data)=>{
+  login() {
+    this.authService.loginWithGoogle().then((data) => {
       this.router.navigate(['room-list']);
-    })
+    });
   }
 }

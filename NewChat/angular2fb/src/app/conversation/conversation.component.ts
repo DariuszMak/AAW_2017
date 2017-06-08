@@ -1,10 +1,10 @@
-import { Component } from '@angular/core';
-import { Message } from '../messages/message.model';
+import {Component} from '@angular/core';
+import {Message} from '../messages/message.model';
 
 @Component({
   selector: 'my-conversation',
   templateUrl: './conversation.component.html',
-  styleUrls:  ['./conversation.component.css']
+  styleUrls: ['./conversation.component.css']
 })
 
 export class ConversationComponent {
@@ -21,7 +21,7 @@ export class ConversationComponent {
   }
 
   sendMessage(): void {
-    this.messages.push({name:this.editorContent, date:new Date(), sender: localStorage.getItem('currentUser')});
+    this.messages.push({name: this.editorContent, date: new Date(), sender: localStorage.getItem('currentUser')});
     this.editorContent = '';
   }
 

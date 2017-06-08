@@ -1,6 +1,6 @@
 <ul class="messages">
   <li *ngFor="let message of messages">
-    <div [innerHTML] = message.name></div>
+    <div [innerHTML]=message.name></div>
     <div class="date">Data wysłania: {{message.date | date:'medium'}}</div>
     <div class="sender">Wysyłający: {{message.sender}}</div>
   </li>

@@ -1,9 +1,11 @@
 <div *ngIf="room">
   <h2>{{room?.name}} - konwersacja</h2>
   <div>
-    <label>id: </label>{{room.id}}</div>
+    <label>id: </label>{{room.id}}
+  </div>
   <div>
-    <label>nazwa: </label>{{room.name}}</div>
+    <label>nazwa: </label>{{room.name}}
+  </div>
 </div>
 
 <button type="button" class="btn btn-default" (click)="deleteRoom()">Usuń pokój</button>

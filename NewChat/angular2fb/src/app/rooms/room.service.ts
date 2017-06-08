@@ -1,15 +1,16 @@
-import { Injectable } from '@angular/core';
-import { Room } from './room.model';
-import { Observable } from 'rxjs/Rx';
+import {Injectable} from '@angular/core';
+import {Room} from './room.model';
+import {Observable} from 'rxjs/Rx';
 
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
-import { AngularFire, FirebaseListObservable } from "angularfire2";
+import {AngularFire, FirebaseListObservable} from "angularfire2";
 
 @Injectable()
 export class RoomService {
 
-  constructor (private af: AngularFire) {}
+  constructor(private af: AngularFire) {
+  }
 
   getRooms(): FirebaseListObservable<Room[]> {
     return this.af.database.list('rooms');
@@ -20,7 +21,7 @@ export class RoomService {
       .map(rooms => rooms.find(room => room.id === id));
   }
 
-  addRoom(room: Room){
+  addRoom(room: Room) {
     const id_number = Number(room.id);
     return this.af.database.list('rooms').push(({id: id_number, name: room.name})).then(
       () => console.log('item added'),
@@ -28,13 +29,13 @@ export class RoomService {
     );
   }
 
-  deleteRoom(id: number){
+  deleteRoom(id: number) {
     const roomList = this.af.database.list('rooms', {
       preserveSnapshot: true,
-      query:{
+      query: {
         orderByChild: 'id',
         equalTo: id,
-        limitToFirst:1
+        limitToFirst: 1
       }
     });
 

@@ -1,13 +1,13 @@
-import { Injectable } from '@angular/core';
-import { Subject } from 'rxjs/Subject';
+import {Injectable} from '@angular/core';
+import {Subject} from 'rxjs/Subject';
 
-import { Notification } from './notification.model';
+import {Notification} from './notification.model';
 
 @Injectable()
 export class NotificationService {
   private notifications = new Subject<Notification>();
 
-  public getStream(){
+  public getStream() {
     return this.notifications.asObservable();
   }
 

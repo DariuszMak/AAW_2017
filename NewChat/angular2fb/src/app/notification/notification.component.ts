@@ -1,8 +1,8 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import {Component, OnInit, OnDestroy} from '@angular/core';
 
-import { NotificationService } from '../notifications/notification.service';
-import { Notification } from '../notifications/notification.model';
-import { Subscription } from "rxjs";
+import {NotificationService} from '../notifications/notification.service';
+import {Notification} from '../notifications/notification.model';
+import {Subscription} from "rxjs";
 
 @Component({
   selector: 'my-notification',
@@ -16,10 +16,11 @@ export class NotificationComponent implements OnInit, OnDestroy {
 
   private subscribe: Subscription;
 
-  constructor(private notifications: NotificationService) {}
+  constructor(private notifications: NotificationService) {
+  }
 
-  private hide(){
-    if (this.notes.length > 0){
+  private hide() {
+    if (this.notes.length > 0) {
       this.notes.splice(0, 1);
     }
   }
@@ -37,7 +38,7 @@ export class NotificationComponent implements OnInit, OnDestroy {
     });
   }
 
-  ngOnDestroy() : void {
+  ngOnDestroy(): void {
     this.subscribe.unsubscribe();
   }
 }

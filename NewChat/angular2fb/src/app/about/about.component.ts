@@ -1,8 +1,9 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 
 @Component({
-  selector : 'about-lazy',
+  selector: 'about-lazy',
   templateUrl: './about.component.html',
-  styleUrls:  ['./about.component.css']
+  styleUrls: ['./about.component.css']
 })
-export class LazyComponent {}
+export class LazyComponent {
+}

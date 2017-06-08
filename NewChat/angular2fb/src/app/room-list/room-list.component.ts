@@ -1,17 +1,17 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
-import { Router } from '@angular/router';
+import {Component, OnInit, OnDestroy} from '@angular/core';
+import {Router} from '@angular/router';
 
-import { Room } from '../rooms/room.model';
-import { RoomService } from '../rooms/room.service';
-import { Subscription } from 'rxjs';
+import {Room} from '../rooms/room.model';
+import {RoomService} from '../rooms/room.service';
+import {Subscription} from 'rxjs';
 
-import { NotificationService } from '../notifications/notification.service';
-import { Notification, TypeEnum } from '../notifications/notification.model';
+import {NotificationService} from '../notifications/notification.service';
+import {Notification, TypeEnum} from '../notifications/notification.model';
 
 @Component({
   selector: 'my-list-room',
   templateUrl: './room-list.component.html',
-  styleUrls:  ['./room-list.component.css']
+  styleUrls: ['./room-list.component.css']
 })
 
 export class RoomListComponent implements OnInit, OnDestroy {
@@ -20,11 +20,10 @@ export class RoomListComponent implements OnInit, OnDestroy {
   private subscribe: Subscription;
   private errorMessage: string = '';
 
-  constructor(
-    private roomService: RoomService,
-    private notificationService: NotificationService,
-    private router: Router
-  ) {}
+  constructor(private roomService: RoomService,
+              private notificationService: NotificationService,
+              private router: Router) {
+  }
 
   getRooms() {
     this.subscribe = this.roomService.getRooms()
