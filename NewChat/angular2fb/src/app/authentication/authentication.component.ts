@@ -1,8 +1,8 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
 import {AuthenticationService} from './authentication.service';
-import {getBootstrapListener} from "@angular/router/src/router_module";
-import {NotificationService} from "../notifications/notification.service";
+import {getBootstrapListener} from '@angular/router/src/router_module';
+import {NotificationService} from '../notifications/notification.service';
 import {TypeEnum, Notification} from "../notifications/notification.model";
 @Component({
   moduleId: module.id,
