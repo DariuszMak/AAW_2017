@@ -43,8 +43,9 @@ export class RoomService {
       snapshots.forEach(snapshot => {
         snapshot.ref.remove();
       });
-    })
+    });
 
+    this.af.database.list('messages'+id).remove();
   }
 
 }

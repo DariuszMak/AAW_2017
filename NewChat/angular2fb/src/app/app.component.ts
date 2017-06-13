@@ -19,8 +19,6 @@ export class AppComponent {
   currentUser_email: string = '';
   currentUser_name: string = '';
 
-  items: FirebaseListObservable<any[]>;
-
   constructor(angf: AngularFire, public authService: AuthService, private router: Router, private notificationService: NotificationService) {
     this.authService.af.auth.subscribe(
       (auth) => {
@@ -31,7 +29,6 @@ export class AppComponent {
         }
         else {
           this.isLoggedIn = true;
-          this.items = angf.database.list('/items');
           this.currentUser_name = auth.google.displayName;
           this.currentUser_email = auth.google.email;
           localStorage.setItem('currentUser', this.currentUser_name);
