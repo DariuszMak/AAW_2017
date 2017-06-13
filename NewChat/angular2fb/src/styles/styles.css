@@ -3,16 +3,19 @@ body {
   font-family: 'Lato', sans-serif;
   font-weight: 900;
 }
+
 h1 {
   color: #369;
   font-size: 250%;
 }
+
 .logo {
   color: blue;
   margin-top: 20px;
   font-size: 44px;
   letter-spacing: 3px;
 }
+
 #content {
   float: left;
   padding: 40px;
@@ -21,11 +24,13 @@ h1 {
   min-height: 580px;
   text-align: justify;
 }
+
 .bigtitle {
   font-weight: 900px;
   font-size: 32px;
   letter-spacing: 2px;
 }
+
 .dottedline {
   height: 5px;
   margin-top: 15px;

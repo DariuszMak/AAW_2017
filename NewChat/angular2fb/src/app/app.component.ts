@@ -4,6 +4,8 @@ import {AngularFire, FirebaseListObservable} from 'angularfire2';
 import {AuthService} from './providers/auth.service';
 import {Router} from '@angular/router';
 import auth = firebase.auth;
+import {NotificationService} from "./notifications/notification.service";
+import {TypeEnum, Notification} from "./notifications/notification.model";
 
 @Component({
   selector: 'app-root',
@@ -19,7 +21,7 @@ export class AppComponent {
 
   items: FirebaseListObservable<any[]>;
 
-  constructor(angf: AngularFire, public authService: AuthService, private router: Router) {
+  constructor(angf: AngularFire, public authService: AuthService, private router: Router, private notificationService: NotificationService) {
     this.authService.af.auth.subscribe(
       (auth) => {
         if (auth == null) {
@@ -33,6 +35,10 @@ export class AppComponent {
           this.currentUser_name = auth.google.displayName;
           this.currentUser_email = auth.google.email;
           localStorage.setItem('currentUser', this.currentUser_name);
+          this.notificationService.add(<Notification> {
+            type: TypeEnum.success,
+            message: 'Witaj, ' + this.currentUser_name
+          });
           this.router.navigate(['room-list']);
         }
       }

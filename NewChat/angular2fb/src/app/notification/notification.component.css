@@ -1,6 +1,7 @@
 .notifications {
   top: 10%;
 }
+
 .notifications div {
   border: 1px solid;
   border-radius: 4px;
@@ -12,21 +13,25 @@
   text-align: center;
   width: 900px;
 }
+
 .notifications div.success {
   background-color: #36f26b;
   border-color: #09862c;
   color: #000000;
 }
+
 .notifications div.error {
   background-color: #ff3a41;
   border-color: #ff0710;
   color: #070000;
 }
+
 .notifications div.warn {
   background-color: #fafe32;
   border-color: #939601;
   color: #0d0d00;
 }
+
 .notifications div.info {
   background-color: #a3d5f8;
   border-color: #1594ed;

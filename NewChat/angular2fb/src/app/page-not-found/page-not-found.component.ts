@@ -1,4 +1,4 @@
-import { Component } from "@angular/core";
+import {Component} from "@angular/core";
 
 @Component({
   selector: 'page-not-found',
@@ -7,4 +7,5 @@ import { Component } from "@angular/core";
 
 export class PageNotFoundComponent {
   private message: string = "Strona o podanym adresie nie istnieje :(";
-};
+}
+;

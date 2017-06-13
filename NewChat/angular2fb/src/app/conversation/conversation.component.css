@@ -6,6 +6,7 @@
   height: 25em;
   overflow: auto;
 }
+
 .messages li {
   position: relative;
   left: 0;
@@ -16,9 +17,11 @@
   overflow: auto;
   border-radius: 4px;
 }
+
 .messages .date {
   color: #841aff;
 }
+
 .messages .sender {
   color: #fef7fc;
 }
