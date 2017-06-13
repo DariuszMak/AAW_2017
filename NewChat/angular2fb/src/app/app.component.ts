@@ -26,7 +26,7 @@ export class AppComponent {
       (auth) => {
         if (auth == null) {
           this.isLoggedIn = false;
-          localStorage.removeItem('currentUser')
+          localStorage.removeItem('currentUser');
           this.router.navigate(['login']);
         }
         else {
