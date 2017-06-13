@@ -1,7 +1,7 @@
 export class Message {
 
   constructor(public name: string,
-              public date: any,
+              public date: string,
               public sender: string) {
   }
 }

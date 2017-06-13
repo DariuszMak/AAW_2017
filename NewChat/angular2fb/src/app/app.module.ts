@@ -18,6 +18,7 @@ import {ConversationComponent} from './conversation/conversation.component';
 import {QuillEditorModule} from 'ng2-quill-editor';
 import {AuthService} from "./providers/auth.service";
 import {LoginComponent} from './login/login.component';
+import {MessageService} from "./messages/message.service";
 
 @NgModule({
   declarations: [
@@ -42,7 +43,8 @@ import {LoginComponent} from './login/login.component';
   providers: [
     RoomService,
     NotificationService,
-    AuthService
+    AuthService,
+    MessageService
   ],
   bootstrap: [
     AppComponent
